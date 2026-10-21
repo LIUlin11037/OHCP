@@ -1,0 +1,28 @@
+{
+  "requestId": "demo-request-001",
+  "sessionId": "demo-session-001",
+  "decision": "CONFIRMED",
+  "candidates": [
+    {
+      "element": "N",
+      "elementName": "氮（演示候选）",
+      "confidence": 0.84,
+      "summary": "以下为界面流程演示内容，不代表真实诊断结论。",
+      "matchingFeatures": ["老叶先出现变化（演示）", "叶片整体颜色变浅（演示）"],
+      "evidence": [
+        { "title": "Mock 样例", "excerpt": "真实证据将在后端契约和知识来源确认后展示。" }
+      ]
+    },
+    {
+      "element": "Mg",
+      "elementName": "镁（演示候选）",
+      "confidence": 0.38,
+      "summary": "演示第二候选。",
+      "matchingFeatures": ["候选排序来自演示 DTO"],
+      "evidence": [
+        { "title": "Mock 样例", "excerpt": "此条目不用于农艺判断。" }
+      ]
+    }
+  ],
+  "greenTip": "科学施肥应结合土壤检测与当地农技建议。此处为演示提醒。"
+}

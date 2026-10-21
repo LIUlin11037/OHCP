@@ -1,0 +1,15 @@
+{
+  "element": "N",
+  "elementName": "氮 元素（演示）",
+  "mode": "farmer",
+  "introduction": "这是界面流程用的占位内容，不构成农艺建议。真实方案需由后端依据知识库返回。",
+  "agronomicControl": ["演示：具体调控措施待真实后端契约提供。"],
+  "organicPlan": [
+    { "name": "演示有机肥条目", "method": "未提供", "nutrientContent": "未提供", "notes": "请勿作为实际施肥依据" }
+  ],
+  "chemicalPlan": [
+    { "name": "演示化学肥条目", "amount": "未提供", "method": "未提供", "nutrientContent": "未提供", "notes": "请勿作为实际施肥依据" }
+  ],
+  "safetyReminders": ["Mock 演示数据，不可用于田间决策。"],
+  "sources": []
+}

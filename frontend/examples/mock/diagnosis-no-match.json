@@ -1,0 +1,8 @@
+{
+  "requestId": "demo-request-003",
+  "decision": "NO_MATCH",
+  "candidates": [],
+  "followUp": {
+    "question": "请补充田间照片、土壤信息或近期管理变化后再判断。"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "requestId": "demo-request-004",
+  "sessionId": "demo-session-004",
+  "decision": "CONFIRMED",
+  "isDegraded": true,
+  "degradedMode": "演示规则模式",
+  "candidates": [
+    {
+      "element": "N",
+      "elementName": "氮（降级演示候选）",
+      "confidence": 0.61,
+      "summary": "降级结果仅演示辅助模式的界面，不代表真实判断。",
+      "matchingFeatures": ["降级模式示例"],
+      "evidence": []
+    }
+  ],
+  "greenTip": "演示数据不用于田间决策。"
+}

@@ -1,0 +1,373 @@
+{
+  "version": "1.0",
+  "note": "症状特征矩阵：规则通道的打分依据。feature 权重为正表示命中加分，存于 negative 表示命中扣分。冲突项（如缺氮命中'新叶首发'）会显著降低该元素得分，这是区分易混淆缺素的关键。",
+  "features": {
+    "old_leaf": {
+      "label": "老叶首发/自下部叶开始",
+      "aliases": [
+        "老叶",
+        "下部叶",
+        "基部叶",
+        "下面的叶",
+        "从下往上"
+      ]
+    },
+    "new_leaf": {
+      "label": "新叶首发/顶部新梢",
+      "aliases": [
+        "新叶",
+        "嫩叶",
+        "幼叶",
+        "顶部",
+        "新梢",
+        "上部叶",
+        "顶端"
+      ]
+    },
+    "whole_plant": {
+      "label": "全株性",
+      "aliases": [
+        "全株",
+        "整株",
+        "整体"
+      ]
+    },
+    "uniform_yellow": {
+      "label": "均匀黄化/整叶褪绿",
+      "aliases": [
+        "均匀黄化",
+        "发黄",
+        "变黄",
+        "褪绿",
+        "黄化",
+        "整体发黄"
+      ]
+    },
+    "interveinal_chlorosis": {
+      "label": "脉间失绿/叶脉仍绿",
+      "aliases": [
+        "脉间",
+        "叶脉仍绿",
+        "叶脉是绿",
+        "网状",
+        "脉间失绿",
+        "叶脉绿"
+      ]
+    },
+    "purple_dark_green": {
+      "label": "暗绿或紫红",
+      "aliases": [
+        "紫红",
+        "发紫",
+        "暗绿",
+        "紫红色",
+        "叶背发紫"
+      ]
+    },
+    "margin_scorch": {
+      "label": "叶缘焦枯/灼烧状",
+      "aliases": [
+        "叶缘",
+        "焦边",
+        "焦枯",
+        "叶尖干枯",
+        "灼烧",
+        "边缘干"
+      ]
+    },
+    "brown_spot": {
+      "label": "褐斑/褐变",
+      "aliases": [
+        "褐斑",
+        "褐色斑点",
+        "褐变"
+      ]
+    },
+    "necrotic_spot": {
+      "label": "灰褐坏死斑",
+      "aliases": [
+        "坏死斑",
+        "灰褐",
+        "灰白斑",
+        "斑点"
+      ]
+    },
+    "small_narrow_leaf": {
+      "label": "小叶/窄叶/丛生",
+      "aliases": [
+        "小叶",
+        "叶小",
+        "窄",
+        "丛生",
+        "簇生"
+      ]
+    },
+    "short_internode": {
+      "label": "节间缩短",
+      "aliases": [
+        "节间",
+        "矮缩",
+        "节短"
+      ]
+    },
+    "stunted": {
+      "label": "植株矮小瘦弱",
+      "aliases": [
+        "矮小",
+        "瘦弱",
+        "长不高",
+        "植株矮",
+        "矮化"
+      ]
+    },
+    "tillering_reduced": {
+      "label": "分蘖或分枝减少",
+      "aliases": [
+        "分蘖",
+        "分枝少",
+        "分蘖少",
+        "不分蘖"
+      ]
+    },
+    "distorted_new_leaf": {
+      "label": "新叶畸形卷曲",
+      "aliases": [
+        "卷曲",
+        "畸形",
+        "皱缩",
+        "扭曲",
+        "卷叶"
+      ]
+    },
+    "growing_point_dead": {
+      "label": "顶芽或生长点坏死",
+      "aliases": [
+        "顶芽",
+        "生长点",
+        "心叶坏死",
+        "烂心",
+        "顶枯"
+      ]
+    },
+    "fruit_disorder": {
+      "label": "果实异常（脐腐/裂果/花而不实）",
+      "aliases": [
+        "脐腐",
+        "裂果",
+        "花而不实",
+        "不结实",
+        "坐果",
+        "落花"
+      ]
+    },
+    "stem_weak": {
+      "label": "茎秆软弱/开裂/易倒",
+      "aliases": [
+        "倒伏",
+        "茎秆软",
+        "茎裂",
+        "易倒",
+        "茎秆弱"
+      ]
+    },
+    "white_leaf": {
+      "label": "全叶白化",
+      "aliases": [
+        "白化",
+        "发白",
+        "近乎白色",
+        "白叶"
+      ]
+    },
+    "thick_brittle": {
+      "label": "叶片厚而脆",
+      "aliases": [
+        "厚脆",
+        "变厚",
+        "硬脆",
+        "脆"
+      ]
+    }
+  },
+  "mobility": {
+    "N": "mobile",
+    "P": "mobile",
+    "K": "mobile",
+    "Mg": "mobile",
+    "S": "semi",
+    "Zn": "semi",
+    "Fe": "immobile",
+    "Ca": "immobile",
+    "B": "immobile",
+    "Mn": "immobile",
+    "Cu": "immobile",
+    "Mo": "immobile"
+  },
+  "elements": {
+    "N": {
+      "prior": 0.95,
+      "features": {
+        "old_leaf": 0.9,
+        "uniform_yellow": 0.9,
+        "stunted": 0.55,
+        "tillering_reduced": 0.5,
+        "whole_plant": 0.35
+      },
+      "negative": {
+        "new_leaf": -0.7,
+        "interveinal_chlorosis": -0.4,
+        "margin_scorch": -0.3,
+        "purple_dark_green": -0.25
+      }
+    },
+    "P": {
+      "prior": 0.6,
+      "features": {
+        "old_leaf": 0.7,
+        "purple_dark_green": 0.85,
+        "stunted": 0.45,
+        "tillering_reduced": 0.35
+      },
+      "negative": {
+        "new_leaf": -0.5,
+        "uniform_yellow": -0.3,
+        "margin_scorch": -0.2
+      }
+    },
+    "K": {
+      "prior": 0.75,
+      "features": {
+        "old_leaf": 0.7,
+        "margin_scorch": 0.85,
+        "brown_spot": 0.5,
+        "stem_weak": 0.6
+      },
+      "negative": {
+        "new_leaf": -0.4,
+        "interveinal_chlorosis": -0.4,
+        "uniform_yellow": -0.2
+      }
+    },
+    "Mg": {
+      "prior": 0.55,
+      "features": {
+        "old_leaf": 0.75,
+        "interveinal_chlorosis": 0.85,
+        "brown_spot": 0.2
+      },
+      "negative": {
+        "new_leaf": -0.6,
+        "margin_scorch": -0.3,
+        "white_leaf": -0.4
+      }
+    },
+    "Fe": {
+      "prior": 0.6,
+      "features": {
+        "new_leaf": 0.9,
+        "interveinal_chlorosis": 0.85,
+        "white_leaf": 0.6
+      },
+      "negative": {
+        "old_leaf": -0.7,
+        "margin_scorch": -0.3,
+        "necrotic_spot": -0.3
+      }
+    },
+    "Zn": {
+      "prior": 0.5,
+      "features": {
+        "new_leaf": 0.75,
+        "small_narrow_leaf": 0.85,
+        "short_internode": 0.6,
+        "stunted": 0.3
+      },
+      "negative": {
+        "old_leaf": -0.5,
+        "uniform_yellow": -0.3,
+        "interveinal_chlorosis": -0.2
+      }
+    },
+    "Ca": {
+      "prior": 0.5,
+      "features": {
+        "new_leaf": 0.7,
+        "distorted_new_leaf": 0.8,
+        "growing_point_dead": 0.7,
+        "fruit_disorder": 0.6
+      },
+      "negative": {
+        "old_leaf": -0.5,
+        "uniform_yellow": -0.3
+      }
+    },
+    "B": {
+      "prior": 0.45,
+      "features": {
+        "new_leaf": 0.55,
+        "growing_point_dead": 0.7,
+        "fruit_disorder": 0.6,
+        "thick_brittle": 0.7,
+        "stem_weak": 0.3
+      },
+      "negative": {
+        "old_leaf": -0.4,
+        "uniform_yellow": -0.3
+      }
+    },
+    "S": {
+      "prior": 0.55,
+      "features": {
+        "new_leaf": 0.7,
+        "uniform_yellow": 0.75,
+        "whole_plant": 0.3,
+        "stunted": 0.3
+      },
+      "negative": {
+        "old_leaf": -0.6,
+        "interveinal_chlorosis": -0.3,
+        "necrotic_spot": -0.2
+      }
+    },
+    "Mn": {
+      "prior": 0.45,
+      "features": {
+        "new_leaf": 0.7,
+        "interveinal_chlorosis": 0.6,
+        "necrotic_spot": 0.7
+      },
+      "negative": {
+        "old_leaf": -0.5,
+        "margin_scorch": -0.2
+      }
+    },
+    "Cu": {
+      "prior": 0.3,
+      "features": {
+        "new_leaf": 0.6,
+        "white_leaf": 0.55,
+        "distorted_new_leaf": 0.45,
+        "growing_point_dead": 0.3
+      },
+      "negative": {
+        "old_leaf": -0.4,
+        "uniform_yellow": -0.3
+      }
+    },
+    "Mo": {
+      "prior": 0.25,
+      "features": {
+        "old_leaf": 0.3,
+        "uniform_yellow": 0.3,
+        "distorted_new_leaf": 0.5,
+        "stunted": 0.15
+      },
+      "negative": {
+        "new_leaf": -0.3,
+        "necrotic_spot": -0.2,
+        "tillering_reduced": -0.25,
+        "margin_scorch": -0.2
+      }
+    }
+  }
+}

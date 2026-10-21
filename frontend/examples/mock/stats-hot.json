@@ -1,0 +1,5 @@
+[
+  { "crop": "水稻（演示）", "symptom": "老叶发黄", "count": 42 },
+  { "crop": "玉米（演示）", "symptom": "叶缘干枯", "count": 31 },
+  { "crop": "番茄（演示）", "symptom": "新叶卷曲", "count": 24 }
+]

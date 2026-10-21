@@ -1,0 +1,9 @@
+{
+  "status": "demo",
+  "checkedAt": "2026-10-21T00:00:00.000Z",
+  "services": [
+    { "name": "前端 Mock", "status": "演示中", "detail": "非真实服务健康检查" },
+    { "name": "诊断 API", "status": "待联调", "detail": "后端接口未配置" },
+    { "name": "知识库", "status": "待联调", "detail": "后端接口未配置" }
+  ]
+}

@@ -1,0 +1,16 @@
+event: meta
+data: {"sessionId":"demo-session-001"}
+
+event: candidate
+data: {"element":"N","note":"演示数据，不是诊断结果"}
+
+event: token
+data: {"delta":"这是演示回复。"}
+
+event: sizheng
+data: {"note":"结构化辨证字段待后端契约确认"}
+
+: ping
+
+event: done
+data: {"status":"done"}

@@ -1,0 +1,25 @@
+# 构建产物
+backend/target/
+backend/out/
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEA
+.idea/
+*.iml
+
+# 密钥与本地环境（绝不提交）
+.env
+*.env
+application-local.yml
+application-local.properties
+
+# 爬虫产物
+crawler/out/
+data/raw/
+__pycache__/
+*.pyc
+.venv/
+
+# 向量文件：体积大，可选提交。若要保证演示不依赖网络，建议提交
+# data/vectors/vectors.jsonl

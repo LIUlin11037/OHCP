@@ -1,0 +1,78 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: crop-agent
+  jackson:
+    default-property-inclusion: always
+    time-zone: Asia/Shanghai
+  ai:
+    openai:
+      # 密钥只从环境变量读，绝不写进本文件
+      api-key: ${LLM_API_KEY:sk-not-configured}
+      base-url: ${LLM_BASE_URL:https://api.deepseek.com}
+      chat:
+        options:
+          model: ${LLM_MODEL:deepseek-chat}
+          temperature: 0.2
+          max-tokens: 800
+
+agent:
+  # 注意：路径相对于运行目录（IDEA 里 Run 时工作目录通常是 backend/）
+  kb:
+    dir: ../data/kb
+    hot-reload: true
+  vectors:
+    file: ../data/vectors/vectors.jsonl
+  embedding:
+    enabled: true
+    base-url: ${EMBEDDING_BASE_URL:}
+    api-key: ${EMBEDDING_API_KEY:}
+    model: ${EMBEDDING_MODEL:text-embedding-v3}
+  retrieval:
+    top-k: 8
+    rrf-k: 60
+    vector-enabled: true
+  confidence:
+    confirm-threshold: 0.65
+    ask-threshold: 0.40
+    sharpen: 1.6            # 压缩中间区：0.5 附近被压到 0.35，减少半信半疑的结论
+    weight:
+      rule: 0.45
+      semantic: 0.30
+      part: 0.15
+      crop: 0.10
+  llm:
+    enabled: true           # 关掉即回退纯模板，演示兜底开关
+    base-url: ${LLM_BASE_URL:https://api.deepseek.com}
+    api-key: ${LLM_API_KEY:}
+    model: ${LLM_MODEL:deepseek-chat}
+    temperature: 0.2
+    max-tokens: 800
+    timeout-ms: 6000
+  sizheng:
+    enabled: true
+    max-chars: 60
+  output:
+    default-mode: farmer
+  fallback:
+    template-only: false    # 演示保险开关：true 时完全切断模型依赖
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: info
+    com.ohcp.cropagent: debug

@@ -1,0 +1,14 @@
+{
+  "requestId": "demo-request-002",
+  "sessionId": "demo-session-002",
+  "decision": "NEED_MORE_INFO",
+  "candidates": [],
+  "followUp": {
+    "question": "变化主要出现在什么位置？（演示问题）",
+    "options": [
+      { "label": "主要在老叶", "expectedField": "leafAge", "value": "老叶" },
+      { "label": "主要在新叶", "expectedField": "leafAge", "value": "新叶" },
+      { "label": "暂时不确定", "value": "不确定" }
+    ]
+  }
+}

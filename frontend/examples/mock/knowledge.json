@@ -1,0 +1,9 @@
+{
+  "element": "N",
+  "elementName": "N 元素",
+  "overview": "科普内容等待真实后端知识条目，此卡片仅用于演示页面交互。",
+  "symptoms": ["未提供真实症状内容"],
+  "crops": [],
+  "advice": ["请勿根据 Mock 页面内容采取施肥行动。"],
+  "sources": []
+}

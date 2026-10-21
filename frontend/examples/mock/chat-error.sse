@@ -1,0 +1,5 @@
+event: meta
+data: {"sessionId":"demo-session-001"}
+
+event: error
+data: {"code":5000,"message":"演示错误，不是真实后端响应"}
